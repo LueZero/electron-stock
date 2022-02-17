@@ -10,3 +10,5 @@ npm install
 # Run the app
 npm start
 ```
+
+![plot](/public/images/github/完成品.PNG)
