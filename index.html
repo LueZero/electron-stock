@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <link href="./public/css/styles.css" rel="stylesheet">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="./public/uikit/css/uikit.min.css" />
+    <!-- UIkit JS -->
+    <script type="text/javascript" src="./public/uikit/js/uikit.min.js"></script>
+    <script type="text/javascript" src="./public/uikit/js/uikit-icons.min.js"></script>
+    <title>台灣證券交易所</title>
+</head>
+
+<body>
+    <div class="uk-container">
+        <div>
+            <form class="uk-form">
+                <select class="uk-select" id="select-transaction-type">
+                <option value="個股日成交資訊">個股日成交資訊</option>
+            </select>
+                <input class="uk-input" type="month" placeholder="資料日期" id="search-date">
+                <input class="uk-input" type="text" placeholder="股票代碼" id="search-stock-no" list="stock-no-list" value="" onkeyup="stockNoQuery(this.id)">
+                <datalist id="stock-no-list">
+                </datalist>
+                <button type="button" class="uk-button uk-button-primary" onclick="get()">查詢</button>
+            </form>
+        </div>
+
+        <table class="uk-table uk-table-responsive uk-table-divider">
+            <thead>
+                <tr id="title">
+                    <!-- <th>Table Heading</th>
+                <th>Table Heading</th>
+                <th>Table Heading</th> -->
+                </tr>
+            </thead>
+
+            <tbody id="content">
+                <tr></tr>
+                <!-- <tr>
+                <td>Table Data</td>
+                <td>Table Data</td>
+                <td>Table Data</td>
+            </tr>
+            <tr>
+                <td>Table Data</td>
+                <td>Table Data</td>
+                <td>Table Data</td>
+            </tr>
+            <tr>
+                <td>Table Data</td>
+                <td>Table Data</td>
+                <td>Table Data</td>
+            </tr> -->
+            </tbody>
+        </table>
+        <!-- You can also require other files to run in this process -->
+    </div>
+    <script src="./renderer.js"></script>
+    <script type="text/javascript" src="./public/js/twse/get.js"></script>
+</body>
+
+</html>
