@@ -1,9 +1,9 @@
-const stockDayUrl = "https://www.twse.com.tw/exchangeReport/STOCK_DAY";
-const stockNoQueryUrl = "https://www.twse.com.tw/zh/api/codeQuery";
+const stockQueryDayUrl = "https://www.twse.com.tw/exchangeReport/STOCK_DAY";
+const stockQueryUrl = "https://www.twse.com.tw/zh/api/codeQuery";
 
-init();
+initialize();
 
-function init() {
+function initialize() {
     Date.prototype.Format = function(fmt) {
         var o = {
             "M+": this.getMonth() + 1,
@@ -28,12 +28,12 @@ function get() {
     var transactionType = e.options[e.selectedIndex].text
 
     if (transactionType == "個股日成交資訊")
-        stockDay();
+        queryStockDay();
 }
 
-function stockNoQuery(id) {
+function queryStock(id) {
     let stockNo = document.getElementById(id).value;
-    fetch(stockNoQueryUrl + '?query=' + stockNo)
+    fetch(stockQueryUrl + '?query=' + stockNo)
         .then(function(response) {
             return response.json();
         })
@@ -52,12 +52,12 @@ function stockNoQuery(id) {
         });
 }
 
-function stockDay() {
+function queryStockDay() {
     let stockNo = document.getElementById('search-stock-no').value;
     let searchDate = document.getElementById('search-date').value;
     const date = new Date(searchDate).Format("yyyyMMdd");
 
-    fetch(stockDayUrl + '?response=json' + '&' + 'date=' + date + '&' + 'stockNo=' + stockNo)
+    fetch(stockQueryDayUrl + '?response=json' + '&' + 'date=' + date + '&' + 'stockNo=' + stockNo)
         .then(function(response) {
             return response.json();
         })

@@ -1,1 +1,1 @@
-const stockDayUrl = "https://www.twse.com.tw/exchangeReport/STOCK_DAY?";
+const stockQueryDayUrl = "https://www.twse.com.tw/exchangeReport/STOCK_DAY?";

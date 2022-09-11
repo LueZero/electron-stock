@@ -21,7 +21,7 @@
                     <option value="個股日成交資訊">個股日成交資訊</option>
                 </select>
                 <input class="uk-input" type="month" placeholder="資料日期" id="search-date">
-                <input class="uk-input" type="text" placeholder="股票代碼" id="search-stock-no" list="stock-no-list" value="" onkeyup="stockNoQuery(this.id)">
+                <input class="uk-input" type="text" placeholder="股票代碼" id="search-stock-no" list="stock-no-list" value="" onkeyup="queryStock(this.id)">
                 <datalist id="stock-no-list">
                 </datalist>
                 <button type="button" class="uk-button uk-button-primary" onclick="get()">查詢</button>
